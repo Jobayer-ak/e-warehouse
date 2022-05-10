@@ -1,0 +1,8 @@
+nav{
+  font-family: "Oswald", sans-serif;
+  font-weight: 300 !important;
+  text-transform: uppercase; 
+}
+nav a{
+    margin-right: 30px;
+}
