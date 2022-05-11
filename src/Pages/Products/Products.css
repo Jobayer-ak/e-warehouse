@@ -1,0 +1,9 @@
+.products-container{
+    background-color: #5C636A;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    
+}

@@ -1,9 +1,21 @@
-import React from "react";
-import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Button,
+  Container,
+  Modal,
+  Nav,
+  Navbar,
+  Offcanvas,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Login from "../../Login/Login";
+import ModalLogin from "../../Modal/ModalLogin";
 import "./Header.css";
 
 const Header = () => {
+  const [show, setShow] = useState("false");
+  const handleShow = () => setShow("true");
+  const handleClose = () => setShow("false");
   return (
     <div className="header">
       {["lg"].map((expand) => (
@@ -25,7 +37,7 @@ const Header = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
                   <Nav.Link href="/">HOME</Nav.Link>
-                  <Nav.Link href="home/products">PRODUCTS</Nav.Link>
+                  <Nav.Link href="/products">PRODUCTS</Nav.Link>
                   <Nav.Link as={Link} to="/blog">
                     BLOG
                   </Nav.Link>
@@ -36,6 +48,8 @@ const Header = () => {
                     CONTACT
                   </Nav.Link>
                 </Nav>
+
+                <ModalLogin></ModalLogin>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
