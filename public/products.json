@@ -1,0 +1,87 @@
+[
+    {
+        
+        "name": "Hp Celeron",
+        "price": "229",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/zfnLYkd/hp1.png"
+    },
+    {
+        "name": "Hp Pavilion",
+        "price": "450",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/BPZV2f8/hp2.jpg"
+
+    },
+    {
+        "name": "Hp Elite Book",
+        "price": "400",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/MRBgNDS/hp3.jpg"
+
+    },
+    {
+        "name": "Dell Latitude",
+        "price": "430",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/FBhFHPK/dell1.jpg"
+
+    },
+    {
+        "name": "Dell Inspiroin",
+        "price": "530",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/hfT94Sr/Dell2.jpg"
+
+    },
+    {
+        "name": "Dell Newest Inspiroin",
+        "price": "460",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/ys1VMhv/dell3.jpg"
+
+    },
+    {
+        "name": "Microsoft Surface",
+        "price": "750",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/qBJ998K/Microsoft1.jpg"
+
+    },
+    {
+        "name": "Microsoft Surface Go",
+        "price": "700",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/c1Srt2Y/Surface-Go.jpg"
+
+    },
+    {
+        "name": "Microsoft Surface Studio",
+        "price": "800",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/bNMKnHK/Surface-studio.jpg"
+
+    },
+    {
+        "name": "Lenevo Flex",
+        "price": "560",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/4RmSJfB/lenevo1.jpg"
+    },
+    {
+        "name": "Lenevo IdeaPad",
+        "price": "600",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/F6VqDRX/Lenevo-Ideapad.jpg"
+    },
+    {
+        "name": "Lenevo IdeaPad 3",
+        "price": "700",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ibb.co/M2mQfRY/Lenevo-Ideapad-3.jpg"
+    }
+]
+
+
+
+

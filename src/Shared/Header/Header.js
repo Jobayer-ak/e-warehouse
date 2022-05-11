@@ -1,19 +1,17 @@
 import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <>
+    <div className="header">
       {["lg"].map((expand) => (
-        <Navbar
-          key={expand}
-          bg="dark"
-          variant="dark"
-          expand={expand}
-          className="mb-3">
+        <Navbar key={expand} variant="dark" expand={expand}>
           <Container>
-            <Navbar.Brand href="#">WAREHOUSE</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">
+              e-WAREHOUSE
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -27,17 +25,23 @@ const Header = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-center flex-grow-1 pe-3">
                   <Nav.Link href="/">HOME</Nav.Link>
-                  <Nav.Link href="#action2">PRODUCTS</Nav.Link>
-                  <Nav.Link href="#action3">BLOG</Nav.Link>
-                  <Nav.Link href="#action4">ABOUT</Nav.Link>
-                  <Nav.Link href="#action5">CONTACT</Nav.Link>
+                  <Nav.Link href="home/products">PRODUCTS</Nav.Link>
+                  <Nav.Link as={Link} to="/blog">
+                    BLOG
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/about">
+                    ABOUT
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/contact">
+                    CONTACT
+                  </Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
       ))}
-    </>
+    </div>
   );
 };
 

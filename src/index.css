@@ -10,12 +10,13 @@ body{
   margin: 0;
   font-family: "Oswald", sans-serif;
   font-weight: 300 !important;
-  text-transform: uppercase; 
+  
 }
 h1, h2, h3, h4, h5 {
   font-family: "Oswald", sans-serif;
   font-weight: 300 !important;
-  text-transform: uppercase; }
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
