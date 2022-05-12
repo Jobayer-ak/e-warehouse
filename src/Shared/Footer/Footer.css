@@ -2,6 +2,9 @@
     background: #444443;
     color: white;
     padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 .social-icons{
     gap: 10px;

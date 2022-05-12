@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Container,
-  Modal,
-  Nav,
-  Navbar,
-  Offcanvas,
-} from "react-bootstrap";
+import { Button, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Login from "../../Login/Login";
-import ModalLogin from "../../Modal/ModalLogin";
+import Register from "../../Register/Register";
 import "./Header.css";
 
 const Header = () => {
@@ -35,7 +28,7 @@ const Header = () => {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-center flex-grow-1 pe-3">
+                <Nav className="justify-content-center me-auto flex-grow-1 pe-3">
                   <Nav.Link href="/">HOME</Nav.Link>
                   <Nav.Link href="/products">PRODUCTS</Nav.Link>
                   <Nav.Link as={Link} to="/blog">
@@ -48,8 +41,14 @@ const Header = () => {
                     CONTACT
                   </Nav.Link>
                 </Nav>
-
-                <ModalLogin></ModalLogin>
+                <Nav>
+                  <Nav.Link className="me-0" as={Link} to="/register">
+                    REGISTER
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/login">
+                    LOGIN
+                  </Nav.Link>
+                </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
