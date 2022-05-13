@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Shared/Header/Header";
 import Footer from "./Shared/Footer/Footer";
@@ -21,8 +20,8 @@ function App() {
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/about" element={<About></About>} />
         <Route path="/contact" element={<Contact></Contact>} />
-        <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

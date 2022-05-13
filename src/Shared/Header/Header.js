@@ -1,14 +1,21 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { Button, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import Login from "../../Login/Login";
-import Register from "../../Register/Register";
+import auth from "../../firebase.init";
+
 import "./Header.css";
 
 const Header = () => {
-  const [show, setShow] = useState("false");
-  const handleShow = () => setShow("true");
-  const handleClose = () => setShow("false");
+  // hooks
+  const [user] = useAuthState(auth);
+
+  // logout
+  const handleLogOut = () => {
+    signOut(auth);
+  };
+
   return (
     <div className="header">
       {["lg"].map((expand) => (
@@ -42,12 +49,32 @@ const Header = () => {
                   </Nav.Link>
                 </Nav>
                 <Nav>
-                  <Nav.Link className="me-0" as={Link} to="/register">
-                    REGISTER
-                  </Nav.Link>
-                  <Nav.Link as={Link} to="/login">
-                    LOGIN
-                  </Nav.Link>
+                  {user && (
+                    <>
+                      <Nav.Link className="me-1" as={Link} to="addproduct">
+                        ADD
+                      </Nav.Link>
+                      <Nav.Link className="me-1" as={Link} to="update">
+                        UPDATE
+                      </Nav.Link>
+                    </>
+                  )}
+                  {user ? (
+                    <Button
+                      onClick={handleLogOut}
+                      className="btn btn-link py-0 py-0 text-white text-decoration-none">
+                      Log Out
+                    </Button>
+                  ) : (
+                    <>
+                      <Nav.Link className="me-0" as={Link} to="/register">
+                        REGISTER
+                      </Nav.Link>
+                      <Nav.Link as={Link} to="/login">
+                        LOGIN
+                      </Nav.Link>
+                    </>
+                  )}
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

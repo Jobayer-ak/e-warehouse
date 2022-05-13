@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 
 const Register = () => {
   // hooks
@@ -20,8 +21,10 @@ const Register = () => {
     );
   }
   if (loading) {
-    return <p>Loading...</p>;
+    return <Loading></Loading>;
   }
+
+  // navigate to home page after registration
   if (user) {
     navigate("/");
   }
