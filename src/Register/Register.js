@@ -6,6 +6,7 @@ import auth from "../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
 const Register = () => {
+  let errorElement;
   // hooks
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -13,13 +14,6 @@ const Register = () => {
 
   //   console.log(email, password);
 
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
   if (loading) {
     return <Loading></Loading>;
   }
@@ -27,6 +21,10 @@ const Register = () => {
   // navigate to home page after registration
   if (user) {
     navigate("/");
+  }
+
+  if (error) {
+    errorElement = <p className="text-danger">{error?.message}</p>;
   }
 
   // Register new user
@@ -67,11 +65,11 @@ const Register = () => {
             required
           />
         </Form.Group>
-        {error}
         <Button className="secondary w-50 d-block mx-auto my-3" type="submit">
           Register
         </Button>
       </Form>
+      {errorElement}
       <p>
         Already have an account?{" "}
         <Link to="/login" className="text-primary text-decoration-none">

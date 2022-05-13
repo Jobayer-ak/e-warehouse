@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import "./Product.css";
+import "./Item.css";
 
-const Product = ({ product }) => {
-  const { name, price, description, img } = product;
+const Item = ({ item }) => {
+  const { name, price, description, img } = item;
   return (
     <Card>
       <Card.Img className="top w-100" src={img} />
@@ -18,4 +18,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default Item;

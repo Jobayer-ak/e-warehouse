@@ -16,19 +16,13 @@ const Login = () => {
   const passwordRef = useRef("");
   const navigate = useNavigate();
 
+  let errorElement;
+
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
-
-  if (error) {
-    return (
-      <div>
-        <p>Error: {error.message}</p>
-      </div>
-    );
-  }
 
   if (loading || sending) {
     return <Loading></Loading>;
@@ -37,6 +31,10 @@ const Login = () => {
   // navigate to home after login
   if (user) {
     navigate("/");
+  }
+
+  if (error) {
+    errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
   const handleLogin = async (e) => {
@@ -89,8 +87,9 @@ const Login = () => {
           Login
         </Button>
       </Form>
+      {errorElement}
       <p>
-        New to Genius Car?{" "}
+        Are You New Here?{" "}
         <Link
           to="/register"
           className="text-primary text-decoration-none"

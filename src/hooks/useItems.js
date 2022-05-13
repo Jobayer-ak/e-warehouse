@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-const useProducts = () => {
+const useItems = () => {
   // hooks
-  const [products, setProducts] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const url = "https://secure-brook-46613.herokuapp.com/products";
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, [products]);
-  return [products, setProducts];
+      .then((data) => setIroducts(data));
+  }, [items]);
+  return [items, setItems];
 };
 
-export default useProducts;
+export default useItems;

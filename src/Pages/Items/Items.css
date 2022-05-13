@@ -1,7 +1,7 @@
-.products-container{
+.items-container{
     background-color: #5C636A;
 }
-.products{
+.items{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
