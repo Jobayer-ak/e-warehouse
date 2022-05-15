@@ -17,7 +17,7 @@ const SocialLogin = () => {
   if (error) {
     return (
       <div>
-        <p>Error: {error.message}</p>
+        <p>Error: {error?.message}</p>
       </div>
     );
   }
@@ -25,7 +25,7 @@ const SocialLogin = () => {
     return <Loading></Loading>;
   }
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
     console.log(from);
   }
 

@@ -1,15 +1,21 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import Loading from "../Shared/Loading/Loading";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
   let errorElement;
   // hooks
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification, sending, verificationError] =
+    useSendEmailVerification(auth);
   const navigate = useNavigate();
 
   //   console.log(email, password);
@@ -23,8 +29,12 @@ const Register = () => {
     navigate("/");
   }
 
-  if (error) {
-    errorElement = <p className="text-danger">{error?.message}</p>;
+  if (error || verificationError) {
+    errorElement = error ? (
+      <p className="text-danger">{error?.message}</p>
+    ) : (
+      <p className="text-danger">{verificationError?.message}</p>
+    );
   }
 
   // Register new user
@@ -34,6 +44,8 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     await createUserWithEmailAndPassword(email, password);
+    await sendEmailVerification();
+    toast("Sent email");
   };
 
   return (
@@ -76,6 +88,7 @@ const Register = () => {
           Please Login
         </Link>
       </p>
+      <ToastContainer />
     </div>
   );
 };

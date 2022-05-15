@@ -16,6 +16,7 @@ import MyItems from "./Shared/MyItems/MyItems";
 import AddItem from "./Shared/AddItem/AddItem";
 import ManageInventory from "./ManageInventory/ManageInventory";
 import AddInventoryItem from "./AddInventoryItem/AddInventoryItem";
+import RequireAuth from "./RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -29,7 +30,12 @@ function App() {
           element={<ItemDetail></ItemDetail>}></Route>
         <Route
           path="/manageitems"
-          element={<ManageItems></ManageItems>}></Route>
+          element={
+            <RequireAuth>
+              <ManageItems></ManageItems>
+            </RequireAuth>
+          }
+        />
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
         <Route path="/myitems" element={<MyItems></MyItems>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
@@ -39,7 +45,11 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route
           path="/manageInventory"
-          element={<ManageInventory></ManageInventory>}></Route>
+          element={
+            <RequireAuth>
+              <ManageInventory></ManageInventory>
+            </RequireAuth>
+          }></Route>
         <Route
           path="/addInventoryItem"
           element={<AddInventoryItem></AddInventoryItem>}></Route>
