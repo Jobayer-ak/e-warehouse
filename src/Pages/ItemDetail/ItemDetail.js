@@ -1,130 +1,117 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import useItemDetail from "../../hooks/useItemDetail";
-import { useForm } from "react-hook-form";
 
 const ItemDetail = () => {
-  const [reload, setReload] = useState(true);
+  //hook
   const { id } = useParams();
-  const [item, setItem] = useItemDetail([]);
+  const [item, setItem] = useState({});
+  const [isReload, setIsReload] = useState(false);
   const valueRef = useRef("");
 
-  let updatedQuantity;
-
+  // fetch data from db
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${id}`;
-    fetch(url)
+    const uri = `http://localhost:5000/inventory/${id}`;
+    fetch(uri)
       .then((res) => res.json())
-      .then((data) => setItem(data));
-  }, [reload]);
-
-  const handleReduceQuantity = (quantity) => {
-    updatedQuantity = parseInt(quantity - 1);
-
-    const url = `http://localhost:5000/inventory/${id}`;
-    console.log(url);
-    console.log(id);
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ updatedQuantity }),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setReload(!reload);
-        console.log(reload);
-        setItem(result);
+      .then((data) => {
+        setItem(data);
       });
+  }, [isReload]);
+
+  // reducing item quantity
+  const handleReduceQuantity = (event) => {
+    event.preventDefault();
+
+    // console.log(updatedQuantity);
+
+    const quantity = Number(item.quantity) - 1;
+
+    if (quantity >= 0) {
+      const upQ = { quantity };
+
+      const url = `http://localhost:5000/inventory/${id}`;
+
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(upQ),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("updated data: ", data);
+          setIsReload(!isReload);
+        });
+    } else {
+      alert("There is no item! Please Add!!!");
+    }
   };
 
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    const url = `https://secure-brook-46613.herokuapp.com/items`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
+  // Restock Item
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const quantity = parseInt(event.target.st.value);
+
+    console.log(typeof quantity);
+
+    const updateItem = { quantity };
+
+    const url = `http://localhost:5000/inventory/${id}`;
+
+    if (quantity > 0) {
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updateItem),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("updated data: ", data);
+          setIsReload(!isReload);
+          event.target.reset();
+        });
+    } else {
+      alert("You must add atleast 1 item!!!!");
+    }
   };
-
-  // const handleRestock = (event) => {
-  //   event.preventDefault();
-  //   const value = valueRef.current.value;
-  //   const url = `https://secure-brook-46613.herokuapp.com/items`;
-
-  //   fetch(url, {
-  //     method: "POsT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(value),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((result) => console.log(result));
-  // };
 
   return (
     <div className="container">
-      <div className="border p-3">
+      <div className="border d-flex justify-content-between my-3 p-3">
         <img
           src={item.img}
           style={{ height: "200px", width: "300px" }}
           alt=""
         />
-        <h2>Item: {item.name}</h2>
-        <h5>ID: {item._id}</h5>
-        <h2>Price: ${item.price}</h2>
-        <p className="lead">Specification: {item.description}</p>
-        <p>Quantity: {updatedQuantity}</p>
-        <button
-          onClick={() => handleReduceQuantity(item.quantity)}
-          className="btn btn-secondary">
-          Delivered
-        </button>
+        <div className="specification">
+          <h2>Item: {item.name}</h2>
+          <h5>ID: {item._id}</h5>
+          <h2>Price: ${item.price}</h2>
+          <p className="lead">Specification: {item.description}</p>
+          <p>Quantity: {item.quantity}</p>
+          <form onSubmit={handleReduceQuantity}>
+            <input
+              className="me-2 btn btn-secondary"
+              type="submit"
+              value="Delivered"
+            />
+          </form>
+        </div>
       </div>
-      <div className="my-4">
-        <h2>Restock the items</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
+      <div>
+        <h3>Restock Your Item</h3>
+        <form onSubmit={handleUpdate}>
+          <input type="number" name="st" />
+          <br />
+          <br />
           <input
-            className="mb-2"
-            placeholder="Name"
-            type="text"
-            {...register("name", { required: true, maxLength: 20 })}
+            className="me-2 btn btn-secondary"
+            type="submit"
+            value="Stock"
           />
-
-          <textarea
-            className="mb-2"
-            placeholder="Description "
-            {...register("description")}
-          />
-
-          <input
-            className="mb-2"
-            placeholder=" Price"
-            type="number"
-            {...register("price")}
-          />
-          <input
-            className="mb-2"
-            placeholder="Image URL"
-            type="text"
-            {...register("img")}
-          />
-          <input
-            className="mb-2"
-            placeholder="Item Quantity"
-            type="text"
-            {...register("quantity")}
-          />
-
-          <input type="submit" value="Add Item" />
         </form>
       </div>
     </div>

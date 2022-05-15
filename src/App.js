@@ -14,6 +14,8 @@ import ItemDetail from "./Pages/ItemDetail/ItemDetail";
 import ManageItems from "./Shared/ManageItems/ManageItems";
 import MyItems from "./Shared/MyItems/MyItems";
 import AddItem from "./Shared/AddItem/AddItem";
+import ManageInventory from "./ManageInventory/ManageInventory";
+import AddInventoryItem from "./AddInventoryItem/AddInventoryItem";
 
 function App() {
   return (
@@ -35,6 +37,12 @@ function App() {
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route
+          path="/manageInventory"
+          element={<ManageInventory></ManageInventory>}></Route>
+        <Route
+          path="/addInventoryItem"
+          element={<AddInventoryItem></AddInventoryItem>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
