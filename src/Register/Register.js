@@ -88,7 +88,6 @@ const Register = () => {
           Please Login
         </Link>
       </p>
-      <ToastContainer />
     </div>
   );
 };

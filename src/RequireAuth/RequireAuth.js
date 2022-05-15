@@ -7,6 +7,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../firebase.init";
 import Loading from "../Shared/Loading/Loading";
+import "react-toastify/dist/ReactToastify.css";
 
 const RequireAuth = ({ children }) => {
   // hook
@@ -38,7 +39,7 @@ const RequireAuth = ({ children }) => {
           }}>
           Send verificatio Email Again
         </button>
-        <ToastContainer></ToastContainer>
+        <ToastContainer />
       </div>
     );
   }

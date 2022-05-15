@@ -24,7 +24,7 @@ const Item = ({ item }) => {
       <button
         onClick={() => navigateToItemDetail(_id)}
         className="btn w-100 btn-secondary">
-        Stock Update
+        Update
       </button>
     </Card>
   );

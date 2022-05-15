@@ -4,7 +4,8 @@ import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
@@ -15,6 +16,10 @@ const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+  console.log(from);
 
   let errorElement;
 
@@ -24,13 +29,14 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
 
-  if (loading || sending) {
+  if (loading) {
     return <Loading></Loading>;
   }
 
-  // navigate to home after login
+  // navigate to where was suppose to go
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
+    console.log(from);
   }
 
   if (error) {
@@ -53,7 +59,7 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      alert("Sent email");
+      toast("Sent email");
     } else {
       alert("Please Enter Your Email Address!");
     }
