@@ -9,7 +9,6 @@ const Items = () => {
   const location = useLocation();
   // custom hook
   const [items] = useItems();
-  // console.log(items);
 
   return (
     <div className="items-container mt-0">

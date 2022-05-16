@@ -1,7 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../firebase.init";
 
 const AddInventoryItem = () => {
+  // hook
+  const [user] = useAuthState(auth);
+
   // Add Item
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -63,6 +68,13 @@ const AddInventoryItem = () => {
           placeholder="Item Image URL"
           type="text"
           {...register("img")}
+        />
+        <input
+          className="mb-2"
+          placeholder="Owner Email"
+          type="email"
+          value={user?.email}
+          {...register("email")}
         />
 
         <input className="btn btn-secondary" type="submit" value="Add Item" />

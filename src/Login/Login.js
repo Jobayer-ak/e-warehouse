@@ -19,7 +19,7 @@ const Login = () => {
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
-  console.log(from);
+  // console.log(from);
 
   let errorElement;
 
@@ -36,7 +36,6 @@ const Login = () => {
   // navigate to where was suppose to go
   if (user) {
     navigate(from, { replace: true });
-    console.log(from);
   }
 
   if (error) {
