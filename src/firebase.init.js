@@ -5,12 +5,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAXqVUV_xs0OyODQDz_U1otkGYBZPr55S4",
-  authDomain: "e-warehouse-management.firebaseapp.com",
-  projectId: "e-warehouse-management",
-  storageBucket: "e-warehouse-management.appspot.com",
-  messagingSenderId: "224765827704",
-  appId: "1:224765827704:web:e8655b201066b934232b8d",
+  apiKey: process.env.REACT - APP_apiKey,
+  authDomain: process.env.REACT - APP_authDomain,
+  projectId: process.env.REACT - APP_projectId,
+  storageBucket: process.env.REACT - APP_storageBucket,
+  messagingSenderId: process.env.REACT - APP_messagingSenderId,
+  appId: process.env.REACT - APP_appId,
 };
 
 // Initialize Firebase
