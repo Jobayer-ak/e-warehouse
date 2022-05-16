@@ -6,7 +6,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/7yK8wZq/hp-business.jpg",
         "quantity": "5",
-        "supplier": "HP Ltd."
+        "supplier": "HP Ltd.",
+        "email": "jobayer.ak@gmail.com"
     },
     {
         "name": "Hp Pavilion",
@@ -14,7 +15,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/BPZV2f8/hp2.jpg",
         "quantity": "5",
-        "supplier": "HP Ltd."
+        "supplier": "HP Ltd.",
+        "email": "jobayer.ak@gmail.com"
     },
     {
         "name": "Hp Elite Book",
@@ -22,7 +24,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/MRBgNDS/hp3.jpg",
         "quantity": "5",
-        "supplier": "HP Ltd."
+        "supplier": "HP Ltd.",
+        "email": "jobayer.ak@gmail.com"
     },
     {
         "name": "Dell Latitude",
@@ -30,7 +33,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/FBhFHPK/dell1.jpg",
         "quantity": "5",
-        "supplier": "Dell Ltd."
+        "supplier": "Dell Ltd.",
+        "email": "jobayer96153474@yahoo.com"
     },
     {
         "name": "Dell Inspiroin",
@@ -38,7 +42,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/hfT94Sr/Dell2.jpg",
         "quantity": "5",
-        "supplier": "Dell Ltd."
+        "supplier": "Dell Ltd.",
+        "email": "jobayer96153474@yahoo.com"
     },
     {
         "name": "Dell Newest Inspiroin",
@@ -46,7 +51,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/ys1VMhv/dell3.jpg",
         "quantity": "5",
-        "supplier":"Dell Ltd."
+        "supplier":"Dell Ltd.",
+        "email":"jobayer96153474@yahoo.com"
     },
     {
         "name": "Microsoft Surface",
@@ -54,7 +60,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/qBJ998K/Microsoft1.jpg",
         "quantity": "5",
-        "supplier": "Microsoft Corporation"
+        "supplier": "Microsoft Corporation",
+        "email": "json.bourn.ak@gmail.com"
     },
     {
         "name": "Microsoft Surface Go",
@@ -62,7 +69,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/c1Srt2Y/Surface-Go.jpg",
         "quantity": "5",
-        "supplier":"Microsoft Corporation"
+        "supplier":"Microsoft Corporation",
+        "email": "json.bourn.ak@gmail.com"
     },
     {
         "name": "Microsoft Surface Studio",
@@ -70,7 +78,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/bNMKnHK/Surface-studio.jpg",
         "quantity": "5",
-        "supplier": "Microsoft Corporation"
+        "supplier": "Microsoft Corporation",
+        "email": "json.bourn.ak@gmail.com"
     },
     {
         "name": "Lenevo Flex",
@@ -78,7 +87,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/4RmSJfB/lenevo1.jpg",
         "quantity": "5",
-        "supplier": "Lenovo Ltd."
+        "supplier": "Lenovo Ltd.",
+        "email": "jobayer.ak@gmail.com"
     },
     {
         "name": "Lenevo IdeaPad",
@@ -86,7 +96,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/F6VqDRX/Lenevo-Ideapad.jpg",
         "quantity": "5",
-        "supplier": "Lenovo Ltd."
+        "supplier": "Lenovo Ltd.",
+        "email":"jobayer96153474@yahoo.com"
     },
     {
         "name": "Lenevo IdeaPad 3",
@@ -94,7 +105,8 @@
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
         "img": "https://i.ibb.co/M2mQfRY/Lenevo-Ideapad-3.jpg",
         "quantity": "5",
-        "supplier": "Lenovo Ltd."
+        "supplier": "Lenovo Ltd.",
+        "email": "json.bourn.ak@gmail.com"
     }
 ]
 

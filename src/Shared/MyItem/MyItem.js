@@ -8,11 +8,23 @@ const MyItem = ({ item }) => {
   //hook
   const [user] = useAuthState(auth);
 
-  const { name, img, price, quantity, email, description, supplier } = item;
+  const { _id, name, img, price, quantity, email, description, supplier } =
+    item;
 
-  // handle Delete button
+  // Delete item
   const handleDeleteItem = () => {
-    console.log("From my item ");
+    const proceed = window.confirm("Are You Sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/inventory/${_id}`;
+
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
   };
 
   return (

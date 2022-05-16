@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const ItemDetail = () => {
   //hook
@@ -7,6 +9,7 @@ const ItemDetail = () => {
   const [item, setItem] = useState({});
   const [isReload, setIsReload] = useState(false);
   const valueRef = useRef("");
+  const [user] = useAuthState(auth);
 
   // fetch data from db
   useEffect(() => {
@@ -22,11 +25,9 @@ const ItemDetail = () => {
   const handleReduceQuantity = (event) => {
     event.preventDefault();
 
-    // console.log(updatedQuantity);
-
     const quantity = Number(item.quantity) - 1;
 
-    if (quantity >= 0) {
+    if (quantity >= 0 && user.email === item.email) {
       const upQ = { quantity };
 
       const url = `http://localhost:5000/inventory/${id}`;
@@ -44,7 +45,10 @@ const ItemDetail = () => {
           setIsReload(!isReload);
         });
     } else {
-      alert("There is no item! Please Add!!!");
+      console.log(user.email + " " + item.email);
+      user.email !== item.email
+        ? alert("We are sorry!!! Because, this item is not added by you!")
+        : alert("There is no item! Please Add!!!");
     }
   };
 
@@ -59,7 +63,7 @@ const ItemDetail = () => {
 
     const url = `http://localhost:5000/inventory/${id}`;
 
-    if (quantity > 0) {
+    if (quantity > 0 && user.email === item.email) {
       fetch(url, {
         method: "PUT",
         headers: {
@@ -74,7 +78,9 @@ const ItemDetail = () => {
           event.target.reset();
         });
     } else {
-      alert("You must add atleast 1 item!!!!");
+      user.email !== item.email
+        ? alert("We are sorry!!! Because, this item is not added by you!")
+        : alert("There is no item! Please Add!!!");
     }
   };
 
@@ -92,6 +98,7 @@ const ItemDetail = () => {
           <h2>Price: ${item.price}</h2>
           <p className="lead">Specification: {item.description}</p>
           <p>Quantity: {item.quantity}</p>
+          <p>Email: {item.email}</p>
           <form onSubmit={handleReduceQuantity}>
             <input
               className="me-2 btn btn-secondary"
