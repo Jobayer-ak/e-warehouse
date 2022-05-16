@@ -1,10 +1,10 @@
 import React from "react";
-import notfound from "../../images/notfoundjpg.jpg";
+import notfound from "../../images/notfound1.png";
 
 const NotFound = () => {
   return (
     <div>
-      <img className="img-fluid my-5" src={notfound} />
+      <img className="img-fluid my-2" src={notfound} />
     </div>
   );
 };

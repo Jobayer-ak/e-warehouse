@@ -27,6 +27,7 @@ const ItemDetail = () => {
 
     const quantity = Number(item.quantity) - 1;
 
+    // quantity check and item email and user emai is same or not
     if (quantity >= 0 && user.email === item.email) {
       const upQ = { quantity };
 
@@ -63,6 +64,7 @@ const ItemDetail = () => {
 
     const url = `http://localhost:5000/inventory/${id}`;
 
+    // quantity check and item email and user emai is same or not
     if (quantity > 0 && user.email === item.email) {
       fetch(url, {
         method: "PUT",

@@ -9,7 +9,7 @@ const AddInventoryItem = () => {
 
   // Add Item
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     console.log(data);
     const url = `http://localhost:5000/items`;
     fetch(url, {
@@ -23,6 +23,7 @@ const AddInventoryItem = () => {
       .then((result) => {
         console.log(result);
         alert("Successfully Your Item is Added!!!");
+        e.target.reset();
       });
   };
 

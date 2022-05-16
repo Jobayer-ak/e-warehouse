@@ -22,6 +22,7 @@ const MyItem = ({ item }) => {
       })
         .then((res) => res.json())
         .then((data) => {
+          toast("Deleted Item!");
           console.log(data);
         });
     }
