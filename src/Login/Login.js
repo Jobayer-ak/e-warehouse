@@ -55,10 +55,12 @@ const Login = () => {
 
     await signInWithEmailAndPassword(email, password);
     const { data } = await axios.post(
-      "https://secure-brook-46613.herokuapp.coms/login",
+      "https://secure-brook-46613.herokuapp.com/login",
       { email }
     );
+    console.log(data);
     localStorage.setItem("accessToken", data.accessToken);
+
     navigate(from, { replace: true });
   };
 

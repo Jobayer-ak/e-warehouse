@@ -13,7 +13,7 @@ const ItemDetail = () => {
 
   // fetch data from db
   useEffect(() => {
-    const uri = `https://secure-brook-46613.herokuapp.com/inventory${id}`;
+    const uri = `https://secure-brook-46613.herokuapp.com/inventory/${id}`;
     fetch(uri)
       .then((res) => res.json())
       .then((data) => {

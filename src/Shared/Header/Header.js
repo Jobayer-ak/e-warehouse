@@ -46,7 +46,7 @@ const Header = () => {
                     BLOG
                   </Nav.Link>
                   <Nav.Link as={Link} to="/about">
-                    ABOUT
+                    ABOUT US
                   </Nav.Link>
                   <Nav.Link as={Link} to="/contact">
                     CONTACT
