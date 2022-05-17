@@ -1,5 +1,6 @@
 .items-container{
-    background-color: #5C636A;
+    background-color: #444443;
+    padding: 30px;
 }
 .items{
     display: grid;

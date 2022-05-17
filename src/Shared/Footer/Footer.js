@@ -1,13 +1,24 @@
 import React from "react";
 import { FaFacebookSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container d-flex justify-content-around align-items-center">
-        <h5>e-WAREHOUSE</h5>
-        <p className="mb-0">Copy right &copy; 2022</p>
+      <div className="container d-flex justify-content-between align-items-center">
+        <div className="d-flex gap-5">
+          <Link as={Link} to="/about">
+            About Us
+          </Link>
+          <Link as={Link} to="/contact">
+            Contact
+          </Link>
+          <Link as={Link} to="/blog">
+            Blog
+          </Link>
+        </div>
+        <p className="mb-0 copy">Copy right &copy; 2022 by e-WAREHOUSE</p>
         <div className="social-icons d-flex justify-content-around">
           <a
             href="http://www.facebook.com"
