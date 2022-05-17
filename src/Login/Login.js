@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
@@ -7,6 +8,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import auth from "../firebase.init";
+import useToken from "../hooks/useToken";
 import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import "./Login.css";
@@ -29,12 +31,16 @@ const Login = () => {
   const [sendPasswordResetEmail, sending, resetError] =
     useSendPasswordResetEmail(auth);
 
+  // custom hook
+  const [token] = useToken(user);
+
   if (loading) {
     return <Loading></Loading>;
   }
 
   // navigate to where was suppose to go
-  if (user) {
+  if (token) {
+    // console.log("From token: ", token);
     navigate(from, { replace: true });
   }
 
@@ -48,6 +54,9 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
 
   const navigateRegister = () => {

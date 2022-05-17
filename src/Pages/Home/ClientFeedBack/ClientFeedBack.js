@@ -10,11 +10,9 @@ const ClientFeedBack = () => {
         <div className="d-flex justify-content-between align-items-center gap-3">
           <img className="client-image img-fluid" src={client} alt="" />
           <p className="lead fst-italic fw-bold">
-            <blockquote>
-              "I like their service. The reason is that i can track my stock
-              record using this website. Super easy to mantain my online
-              warehouse. Thanks for providing this type of service."
-            </blockquote>
+            "I like their service. The reason is that i can track my stock
+            record using this website. Super easy to mantain my online
+            warehouse. Thanks for providing this type of service."
           </p>
         </div>
       </div>
