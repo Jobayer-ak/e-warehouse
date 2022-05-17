@@ -13,7 +13,7 @@ const ItemDetail = () => {
 
   // fetch data from db
   useEffect(() => {
-    const uri = `http://localhost:5000/inventory/${id}`;
+    const uri = `https://secure-brook-46613.herokuapp.com/inventory${id}`;
     fetch(uri)
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +31,7 @@ const ItemDetail = () => {
     if (quantity >= 0 && user.email === item.email) {
       const upQ = { quantity };
 
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://secure-brook-46613.herokuapp.com/inventory/${id}`;
 
       fetch(url, {
         method: "PUT",
@@ -58,7 +58,7 @@ const ItemDetail = () => {
 
     const updateItem = { quantity };
 
-    const url = `http://localhost:5000/inventory/${id}`;
+    const url = `https://secure-brook-46613.herokuapp.com/inventory/${id}`;
 
     // quantity check and item email and user emai is same or not
     if (quantity > 0 && user.email === item.email) {

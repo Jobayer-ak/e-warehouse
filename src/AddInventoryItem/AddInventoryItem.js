@@ -10,7 +10,7 @@ const AddInventoryItem = () => {
   // Add Item
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
-    const url = `http://localhost:5000/items`;
+    const url = `https://secure-brook-46613.herokuapp.com/items`;
     fetch(url, {
       method: "POST",
       headers: {

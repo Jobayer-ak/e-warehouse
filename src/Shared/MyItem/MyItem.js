@@ -20,7 +20,7 @@ const MyItem = ({ item }) => {
     const proceed = window.confirm("Are You Sure?");
 
     if (proceed) {
-      const url = `http://localhost:5000/inventory/${_id}`;
+      const url = `https://secure-brook-46613.herokuapp.com/inventory/${_id}`;
 
       fetch(url, {
         method: "DELETE",
