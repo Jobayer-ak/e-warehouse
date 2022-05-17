@@ -42,11 +42,9 @@ const ItemDetail = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("updated data: ", data);
           setIsReload(!isReload);
         });
     } else {
-      console.log(user.email + " " + item.email);
       user.email !== item.email
         ? alert("We are sorry!!! Because, this item is not added by you!")
         : alert("There is no item! Please Add!!!");
@@ -57,8 +55,6 @@ const ItemDetail = () => {
   const handleUpdate = (event) => {
     event.preventDefault();
     const quantity = parseInt(event.target.st.value);
-
-    console.log(typeof quantity);
 
     const updateItem = { quantity };
 
@@ -75,53 +71,54 @@ const ItemDetail = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log("updated data: ", data);
           setIsReload(!isReload);
           event.target.reset();
         });
     } else {
       user.email !== item.email
-        ? alert("We are sorry!!! Because, this item is not added by you!")
+        ? alert("We are sorry!!! This item is not added by you!")
         : alert("There is no item! Please Add!!!");
     }
   };
 
   return (
-    <div className="container">
-      <div className="border d-flex justify-content-between my-3 p-3">
-        <img
-          src={item.img}
-          style={{ height: "200px", width: "300px" }}
-          alt=""
-        />
-        <div className="specification">
-          <h2>Item: {item.name}</h2>
-          <h5>ID: {item._id}</h5>
-          <h2>Price: ${item.price}</h2>
-          <p className="lead">Specification: {item.description}</p>
-          <p>Quantity: {item.quantity}</p>
-          <p>Email: {item.email}</p>
-          <form onSubmit={handleReduceQuantity}>
+    <div className="item-detail">
+      <div className="container">
+        <div className="border d-md-flex d-lg-flex justify-content-between my-3 p-3">
+          <img
+            src={item.img}
+            style={{ height: "200px", width: "300px" }}
+            alt=""
+          />
+          <div className="specification">
+            <h2>Item: {item.name}</h2>
+            <h5>ID: {item._id}</h5>
+            <h2>Price: ${item.price}</h2>
+            <p className="lead">Specification: {item.description}</p>
+            <p>Quantity: {item.quantity}</p>
+            <p>Email: {item.email}</p>
+            <form onSubmit={handleReduceQuantity}>
+              <input
+                className="me-2 btn btn-secondary"
+                type="submit"
+                value="Delivered"
+              />
+            </form>
+          </div>
+        </div>
+        <div>
+          <h3>Restock Your Item</h3>
+          <form onSubmit={handleUpdate}>
+            <input type="number" name="st" />
+            <br />
+            <br />
             <input
-              className="me-2 btn btn-secondary"
+              className="me-2 mb-3 btn btn-secondary"
               type="submit"
-              value="Delivered"
+              value="Stock"
             />
           </form>
         </div>
-      </div>
-      <div>
-        <h3>Restock Your Item</h3>
-        <form onSubmit={handleUpdate}>
-          <input type="number" name="st" />
-          <br />
-          <br />
-          <input
-            className="me-2 btn btn-secondary"
-            type="submit"
-            value="Stock"
-          />
-        </form>
       </div>
     </div>
   );

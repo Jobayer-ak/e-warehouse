@@ -10,7 +10,6 @@ const AddInventoryItem = () => {
   // Add Item
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
-    console.log(data);
     const url = `http://localhost:5000/items`;
     fetch(url, {
       method: "POST",
@@ -21,7 +20,6 @@ const AddInventoryItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         alert("Successfully Your Item is Added!!!");
         e.target.reset();
       });

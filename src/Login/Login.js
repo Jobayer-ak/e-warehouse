@@ -20,8 +20,8 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // to get current location
   let from = location.state?.from?.pathname || "/";
-  // console.log(from);
 
   let errorElement;
 
@@ -40,7 +40,6 @@ const Login = () => {
 
   // navigate to where was suppose to go
   if (token) {
-    // console.log("From token: ", token);
     navigate(from, { replace: true });
   }
 
@@ -48,6 +47,7 @@ const Login = () => {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
+  // Login
   const handleLogin = async (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
@@ -59,10 +59,12 @@ const Login = () => {
     navigate(from, { replace: true });
   };
 
+  // navigate to register
   const navigateRegister = () => {
     navigate("/register");
   };
 
+  // Reset Password
   const resetPassword = async () => {
     const email = emailRef.current.value;
     if (email) {
@@ -74,9 +76,9 @@ const Login = () => {
   };
 
   return (
-    <div className="container w-50 mt-3 login mx-auto">
+    <div className="container w-sm-100 w-md-50 w-lg-50 mt-3 login mx-auto">
       <h2 className="my-3 fs-2">Please Login</h2>
-      <Form onSubmit={handleLogin}>
+      <Form className="login-form" onSubmit={handleLogin}>
         <Form.Group className="mb-3">
           <Form.Control
             type="email"

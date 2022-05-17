@@ -15,6 +15,7 @@ const ManageInventoryItem = ({ item }) => {
   const { _id, name, price, quantity, description, img, email, supplier } =
     item;
 
+  const displayWidth = window.innerWidth;
   // Delete item
   const handleDeleteItem = () => {
     const proceed = window.confirm("Are you sure?");
@@ -28,29 +29,37 @@ const ManageInventoryItem = ({ item }) => {
         .then((res) => res.json())
         .then((data) => {
           toast("Deleted item!");
-          console.log(data);
         });
     }
   };
   return (
     <div className="container my-5">
       {user.email === item.email ? (
-        <div className="details d-flex justify-content-around align-items-center my-2">
+        <div className="details d-sm-block d-md-flex d-lg-flex justify-content-around align-items-center my-2">
           <img src={img} style={{ height: "200px", width: "300px" }} alt="" />
           <div className="spec">
             <h3>{name}</h3>
-
-            <p>{description}</p>
+            <div className="pe-3 pb-0">
+              <p>{description}</p>
+            </div>
             <h5>Quantity: {quantity}</h5>
             <h5>Supplier: {supplier}</h5>
             <h5>Owner Email: {email}</h5>
             <h5 className="price">Price: ${price}</h5>
           </div>
-          <button
-            onClick={handleDeleteItem}
-            className="btn delete-btn btn-danger">
-            <FontAwesomeIcon icon={faTrash} />
-          </button>
+          {displayWidth < 768 ? (
+            <button
+              onClick={handleDeleteItem}
+              className="btn btn-danger my-3 remove-btn">
+              Delete
+            </button>
+          ) : (
+            <button
+              onClick={handleDeleteItem}
+              className="btn btn-danger my-3 remove-btn">
+              <FontAwesomeIcon icon={faTrash} />
+            </button>
+          )}
         </div>
       ) : (
         ""

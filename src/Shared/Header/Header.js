@@ -4,7 +4,6 @@ import { Button, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
-
 import "./Header.css";
 
 const Header = () => {
@@ -26,12 +25,13 @@ const Header = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
+              className="offcanvas-end offcanvas"
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end">
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  WAREHOUSE
+                  e-WAREHOUSE
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>

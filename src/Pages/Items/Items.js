@@ -13,7 +13,7 @@ const Items = () => {
   return (
     <div className="items-container mt-0">
       <div className="container">
-        <h2 className="py-4 text-white fw-bold">Inventory Items</h2>
+        <h2 className="pt-2 pb-4 text-white fw-bold ">Inventory Items</h2>
         <div className="items d-sm-block d-md-grid d-lg-grid">
           {location.pathname === "/"
             ? items

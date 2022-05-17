@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <div className="home">
       <Banner></Banner>
-
       <Items></Items>
       <Link to="/manageInventory">
         <button className="btn btn-info my-3">Manage Inventories</button>

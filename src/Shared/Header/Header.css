@@ -17,3 +17,24 @@ nav a:last-child, nav a:nth-child(6){
   margin-right: 5px;
   margin-left: 0;
 }
+/* .offcanvas{
+  max-width: 50%;
+}
+.offcanvas-end {
+  top: 0;
+  right: 0;
+  width: 250px;
+  margin-left: 20px;
+  border-left: 1px solid rgba(0,0,0,.2);
+  transform: translateX(100%);
+} */
+.offcanvas-body{
+  background: #505050;
+}
+.offcanvas-body a{
+  color: white;
+}
+.offcanvas-body a:hover{
+  color: orange;
+}
+
