@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../firebase.init";
+import "./AddInventoryItem.css";
 
 const AddInventoryItem = () => {
   // hook
@@ -26,57 +27,61 @@ const AddInventoryItem = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-3 mb-5">
       <h2 className="my-4">Add Inventory Item</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" w-50 mx-auto d-flex flex-column">
+        className="mx-auto d-flex flex-column add-item">
         <input
-          className="mb-2"
+          className="mb-4"
           placeholder="Item Name"
           type="text"
           {...register("name", { required: true, maxLength: 20 })}
         />
 
         <textarea
-          className="mb-2"
+          className="mb-4"
           placeholder="Item Specification"
           {...register("description")}
         />
 
         <input
-          className="mb-2"
+          className="mb-4"
           placeholder="Item Price"
           type="number"
           {...register("price")}
         />
         <input
-          className="mb-2"
+          className="mb-4"
           placeholder="Item Quantity"
           type="number"
           {...register("quantity")}
         />
         <input
-          className="mb-2"
+          className="mb-4"
           placeholder="Supplier Name"
           type="text"
           {...register("supplier")}
         />
         <input
-          className="mb-2"
+          className="mb-4"
           placeholder="Item Image URL"
           type="text"
           {...register("img")}
         />
         <input
-          className="mb-2"
+          className="mb-4"
           placeholder="Owner Email"
           type="email"
           value={user?.email}
           {...register("email")}
         />
 
-        <input className="btn btn-secondary" type="submit" value="Add Item" />
+        <input
+          className="btn btn-secondary mt-3 mb-5"
+          type="submit"
+          value="Add Item"
+        />
       </form>
     </div>
   );

@@ -13,7 +13,7 @@ const ItemDetail = () => {
 
   // fetch data from db
   useEffect(() => {
-    const uri = `https://secure-brook-46613.herokuapp.com/inventory/${id}`;
+    const uri = `http://localhost:5000/inventory/${id}`;
     fetch(uri)
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +31,7 @@ const ItemDetail = () => {
     if (quantity >= 0 && user.email === item.email) {
       const upQ = { quantity };
 
-      const url = `https://secure-brook-46613.herokuapp.com/inventory/${id}`;
+      const url = `https://secure-brook-46613.herokuapp.com//inventory/${id}`;
 
       fetch(url, {
         method: "PUT",

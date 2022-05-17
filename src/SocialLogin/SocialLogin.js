@@ -24,6 +24,8 @@ const SocialLogin = () => {
   if (loading) {
     return <Loading></Loading>;
   }
+
+  // navigating where wanted to go
   if (user) {
     navigate(from, { replace: true });
   }

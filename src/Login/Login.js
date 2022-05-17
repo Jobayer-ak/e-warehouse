@@ -58,7 +58,7 @@ const Login = () => {
       "https://secure-brook-46613.herokuapp.com/login",
       { email }
     );
-    console.log(data);
+
     localStorage.setItem("accessToken", data.accessToken);
 
     navigate(from, { replace: true });
