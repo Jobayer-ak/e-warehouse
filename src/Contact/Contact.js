@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="container contact">
       <h2 className="my-4">Contact Us</h2>
-      <Form className="w-50 mx-auto">
+      <Form className="w-md-50 w-50 mx-auto">
         <Form.Group className="mb-4">
           <Form.Control type="text" placeholder="Full Name" required />
         </Form.Group>
@@ -30,7 +30,7 @@ const Contact = () => {
           <Form.Control type="text" placeholder="Permanent Address" required />
         </Form.Group>
 
-        <Button variant="secondary mb-3" type="submit">
+        <Button variant="secondary mt-2 mb-5" type="submit">
           Submit
         </Button>
       </Form>

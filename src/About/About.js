@@ -1,23 +1,43 @@
 import React from "react";
 import "./About.css";
+import member1 from "../images/members/member-1.jpg";
+import member2 from "../images/members/member-2.jpg";
+import member3 from "../images/members/member-3.jpg";
+import member4 from "../images/members/member-4.jpg";
 
 const About = () => {
   return (
-    <div id="about">
-      <h2>This About Page</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam animi,
-        quos eius dignissimos in dolorem ducimus sunt, pariatur explicabo enim
-        minus, ea sit nesciunt provident. Similique dignissimos assumenda illo
-        accusantium hic asperiores harum voluptatibus? Perferendis numquam
-        beatae, culpa ipsum corrupti accusamus iusto perspiciatis nulla illum
-        dolorem enim vitae, ullam, dolore similique omnis id. Odit voluptatem,
-        ipsa quas fugit exercitationem iusto est aliquid. Ipsum neque obcaecati
-        dolor fugit esse alias necessitatibus vero doloribus iure praesentium?
-        Expedita ipsum deserunt sit qui beatae voluptas doloremque reiciendis
-        assumenda explicabo adipisci, nemo laudantium provident autem quam optio
-        quae. Vitae corrupti explicabo, ea vel fugiat pariatur?
+    <div id="about" className="container">
+      <h2 className="my-4">About Us</h2>
+      <p className="lead my-5">
+        We are providing online store service with super amazing and experience
+        team. There are lots of reknown companies are using our online store
+        service.Most of the team members and engineers are experienced
+        persons.Our experts are always working to provide quality service.
       </p>
+
+      <div className="members d-md-flex d-lg-flex justify-content-around align-items-center">
+        <div className="member">
+          <img src={member1} alt="" />
+          <h5>Randolph Bell</h5>
+          <p className="lead fst-italic"> C.E.O</p>
+        </div>
+        <div className="member">
+          <img src={member2} alt="" />
+          <h5>Conrad Hawkins</h5>
+          <p className="lead fst-italic">Head Of Marketing</p>
+        </div>
+        <div className="member">
+          <img src={member3} alt="" />
+          <h5>Mina Fernandez</h5>
+          <p className="lead fst-italic">Head Of IT</p>
+        </div>
+        <div className="member">
+          <img src="" alt="" />
+          <p></p>
+          <p></p>
+        </div>
+      </div>
     </div>
   );
 };

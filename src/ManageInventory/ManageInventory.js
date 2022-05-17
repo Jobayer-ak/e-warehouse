@@ -9,7 +9,7 @@ const ManageInventory = () => {
 
   return (
     <div className="container">
-      <div className="d-flex justify-content-center align-items-center gap-5">
+      <div className="d-md-flex d-lg-flex justify-content-center align-items-center gap-5">
         <h2 className="my-3 text-success">Manage Inventories</h2>
         <Link to="/addInventoryItem">
           <button className="btn btn-secondary mt-2 ms-5">

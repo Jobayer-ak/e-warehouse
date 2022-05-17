@@ -7,7 +7,7 @@ const Why = () => {
     <div className="why">
       <div className="container">
         <h2 className="fw-bold my-3">What We Provide?</h2>
-        <div className="d-flex justify-content-between align-items-center gap-5">
+        <div className="d-md-flex d-lg-flex justify-content-between align-items-center gap-5">
           <p className="lead justify-content">
             Your store mantainance our concern. We provide online store
             mantainance system. Where you can add your product data as well as

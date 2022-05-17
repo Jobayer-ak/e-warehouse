@@ -50,9 +50,9 @@ const Register = () => {
 
   return (
     <div className="container w-50 my-5 mx-auto">
-      <h2 className="my-3 fs-2">Register</h2>
-      <Form onSubmit={handleRegister}>
-        <Form.Group className="mb-3">
+      <h2 className="my-5 fs-2">Register</h2>
+      <Form className="my-5" onSubmit={handleRegister}>
+        <Form.Group className="mb-4">
           <Form.Control
             type="text"
             name="name"
@@ -60,7 +60,7 @@ const Register = () => {
             required
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-4">
           <Form.Control
             type="email"
             name="email"
@@ -69,7 +69,7 @@ const Register = () => {
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-4">
           <Form.Control
             type="password"
             name="password"
@@ -77,7 +77,19 @@ const Register = () => {
             required
           />
         </Form.Group>
-        <Button className="secondary w-50 d-block mx-auto my-3" type="submit">
+
+        <Form.Group className="mb-4">
+          <Form.Control
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+        </Form.Group>
+
+        <Button
+          variant="secondary my-5 w-50 d-block mx-auto my-3"
+          type="submit">
           Register
         </Button>
       </Form>

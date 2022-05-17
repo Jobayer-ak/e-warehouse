@@ -6,7 +6,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container d-flex justify-content-between align-items-center">
+      <div className="container d-md-flex d-lg-flex justify-content-between align-items-center">
         <div className="d-flex gap-5">
           <Link as={Link} to="/about">
             About Us
@@ -19,7 +19,7 @@ const Footer = () => {
           </Link>
         </div>
         <p className="mb-0 copy">Copy right &copy; 2022 by e-WAREHOUSE</p>
-        <div className="social-icons d-flex justify-content-around">
+        <div className="social-icons d-flex justify-content-around mt-2">
           <a
             href="http://www.facebook.com"
             target="_blank"
