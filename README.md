@@ -1,6 +1,6 @@
 # e-WAREHOUSE MANAGEMENT React App
 
-e-WAREHOUSE [Create React App](https://e-warehouse-management.firebaseapp.com/).
+ This is live website link [e-WAREHOUSE](https://e-warehouse-management.firebaseapp.com/).
 
 ## Using Technololigies:
 
