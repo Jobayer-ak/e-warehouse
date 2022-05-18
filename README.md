@@ -2,9 +2,6 @@
 
 e-WAREHOUSE [Create React App](https://e-warehouse-management.firebaseapp.com/).
 
-## Available Scripts
-
-In the project directory, you can run:
 ## Using Technololigies:
 
 - HTML, CSS
